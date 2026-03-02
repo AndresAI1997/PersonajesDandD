@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Personaje - Shiroe (Nivel 5)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+        
+        body { font-family: 'Lora', serif; font-size: 15px; line-height: 1.4; color: #1a1a1a; }
+        h1, h2, h3, h4 { font-family: 'Cinzel', serif; font-weight: 700; }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10px auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .stat-bubble {
+            border: 2px solid #000;
+            border-radius: 12px;
+            background: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 8px 0;
+            position: relative;
+        }
+        .stat-mod { font-size: 1.8rem; font-weight: bold; line-height: 1; }
+        .stat-score {
+            font-size: 0.9rem;
+            background: #f0f0f0;
+            border: 1px solid #000;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: -12px;
+        }
+
+        .prof-circle {
+            width: 14px;
+            height: 14px;
+            border: 1.5px solid #000;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            flex-shrink: 0;
+        }
+        .prof-circle.filled { background-color: #000; }
+        
+        .box-section {
+            border: 1.5px solid #333;
+            padding: 12px;
+            border-radius: 8px;
+            background: #fff;
+        }
+
+        .image-placeholder {
+            border: 2px dashed #bbb;
+            background: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        @media print {
+            body { background: none; padding: 0; margin: 0; }
+            .no-print { display: none; }
+            .page { margin: 0; box-shadow: none; border: none; page-break-after: always; }
+        }
+
+        .spell-tag {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            background: #eee;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .spell-tag.conc { background: #fee2e2; color: #991b1b; }
+    </style>
+</head>
+<body class="bg-stone-200">
+
+    <!-- BOTONES DE CONTROL -->
+    <div class="max-w-[210mm] mx-auto mb-6 no-print flex justify-between items-center bg-white p-6 rounded-xl shadow-md border-l-8 border-red-800">
+        <div>
+            <h2 class="font-bold text-2xl text-red-900">Shiroe: El Villano con Gafas</h2>
+            <p class="text-stone-600">Ficha optimizada en 3 páginas para evitar superposiciones.</p>
+        </div>
+        <button onclick="window.print()" class="bg-red-800 text-white px-8 py-4 rounded-lg font-bold hover:bg-red-900 transition-all shadow-lg active:scale-95">
+            🖨️ IMPRIMIR TODO (3 PÁGINAS)
+        </button>
+    </div>
+
+    <!-- PÁGINA 1: MECÁNICAS PRINCIPALES -->
+    <div class="page">
+        <!-- CABECERA -->
+        <div class="flex items-end gap-6 border-b-4 border-black pb-4 mb-8">
+            <div class="flex-grow">
+                <h1 class="text-5xl font-bold tracking-tighter">SHIROE</h1>
+                <p class="text-sm uppercase tracking-[0.3em] text-stone-500 mt-1">Estratega Mágico</p>
+            </div>
+            <div class="w-2/3 grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] uppercase font-bold">
+                <div class="border-b border-stone-300">Mago 5 (Adivino) <p class="font-normal text-stone-400">Clase y Nivel</p></div>
+                <div class="border-b border-stone-300">Sabio <p class="font-normal text-stone-400">Trasfondo</p></div>
+                <div class="border-b border-stone-300">Semielfo <p class="font-normal text-stone-400">Raza</p></div>
+                <div class="border-b border-stone-300">Neutral Verdadero <p class="font-normal text-stone-400">Alineamiento</p></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12 gap-8">
+            <!-- COLUMNA 1: ATRIBUTOS -->
+            <div class="col-span-3 space-y-8">
+                <div class="stat-bubble"><p class="text-[10px] font-bold uppercase">Fuerza</p><p class="stat-mod">-1</p><p class="stat-score">8</p></div>
+                <div class="stat-bubble"><p class="text-[10px] font-bold uppercase">Destreza</p><p class="stat-mod">+1</p><p class="stat-score">13</p></div>
+                <div class="stat-bubble"><p class="text-[10px] font-bold uppercase">Constitución</p><p class="stat-mod">+1</p><p class="stat-score">12</p></div>
+                <div class="stat-bubble border-red-800 border-[3px]"><p class="text-[10px] font-bold uppercase text-red-800">Inteligencia</p><p class="stat-mod">+5</p><p class="stat-score">20</p></div>
+                <div class="stat-bubble"><p class="text-[10px] font-bold uppercase">Sabiduría</p><p class="stat-mod">+1</p><p class="stat-score">12</p></div>
+                <div class="stat-bubble"><p class="text-[10px] font-bold uppercase">Carisma</p><p class="stat-mod">+1</p><p class="stat-score">12</p></div>
+            </div>
+
+            <!-- COLUMNA 2: SALVACIONES Y HABILIDADES (CORREGIDO SOLAPAMIENTO) -->
+            <div class="col-span-5 space-y-6">
+                <div class="box-section">
+                    <h3 class="font-bold border-b border-black mb-3 text-xs uppercase">Tiradas de Salvación</h3>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">-1</span> Fuerza</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Destreza</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Constitución</div>
+                        <div class="flex items-center font-bold text-red-900"><span class="prof-circle filled"></span><span class="w-8 text-center">+8</span> Inteligencia</div>
+                        <div class="flex items-center font-bold text-blue-900"><span class="prof-circle filled"></span><span class="w-8 text-center">+4</span> Sabiduría</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Carisma</div>
+                    </div>
+                </div>
+
+                <div class="box-section">
+                    <h3 class="font-bold border-b border-black mb-3 text-xs uppercase">Habilidades</h3>
+                    <div class="space-y-1 text-[13px]">
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Acrobacias</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">-1</span> Atletismo</div>
+                        <div class="flex items-center font-bold"><span class="prof-circle filled"></span><span class="w-8 text-center">+8</span> C. Arcano</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Engaño</div>
+                        <div class="flex items-center font-bold"><span class="prof-circle filled"></span><span class="w-8 text-center">+8</span> Historia</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Interpretación</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Intimidación</div>
+                        <div class="flex items-center font-bold"><span class="prof-circle filled"></span><span class="w-8 text-center">+8</span> Investigación</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> J. de Manos</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Medicina</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+5</span> Naturaleza</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Percepción</div>
+                        <div class="flex items-center font-bold"><span class="prof-circle filled"></span><span class="w-8 text-center">+4</span> Perspicacia</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Persuasión</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+5</span> Religión</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Sigilo</div>
+                        <div class="flex items-center"><span class="prof-circle"></span><span class="w-8 text-center">+1</span> Supervivencia</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 3: COMBATE Y RETRATO -->
+            <div class="col-span-4 space-y-6">
+                <!-- RETRATO -->
+                <div class="image-placeholder h-48 border-2 border-black rounded-lg relative overflow-hidden">
+                    <!-- Espacio para el retrato que el usuario tiene -->
+                    <img src="" alt="" class="w-full h-full object-cover hidden">
+                    <p class="text-xs text-stone-400 font-bold uppercase text-center p-4">Retrato de Personaje</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="stat-bubble"><p class="text-[9px] font-bold uppercase">CA</p><p class="text-2xl font-bold">14</p></div>
+                    <div class="stat-bubble"><p class="text-[9px] font-bold uppercase">Inic.</p><p class="text-2xl font-bold">+1</p></div>
+                    <div class="stat-bubble"><p class="text-[9px] font-bold uppercase">Veloc.</p><p class="text-xl font-bold">30ft</p></div>
+                </div>
+
+                <div class="border-2 border-black rounded-xl p-4 bg-red-50 text-center">
+                    <p class="text-xs font-bold uppercase border-b border-red-200 mb-2 pb-1">Puntos de Golpe Máx: 27</p>
+                    <div class="h-12 border-2 border-black bg-white rounded flex items-center justify-center text-stone-300 italic">Actuales</div>
+                </div>
+
+                <!-- ESTADÍSTICAS MÁGICAS COMPACTAS -->
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="box-section bg-stone-100 text-center py-2">
+                        <p class="text-[10px] font-bold uppercase">CD Salv.</p>
+                        <p class="text-2xl font-bold">16</p>
+                    </div>
+                    <div class="box-section bg-stone-100 text-center py-2">
+                        <p class="text-[10px] font-bold uppercase">Bono Atq.</p>
+                        <p class="text-2xl font-bold">+8</p>
+                    </div>
+                </div>
+
+                <div class="box-section">
+                    <h3 class="font-bold border-b border-black mb-2 text-xs uppercase">Ataques</h3>
+                    <div class="text-[12px] space-y-2">
+                        <p class="flex justify-between"><b>Manos Ardientes:</b> <span>3d6 Fuego</span></p>
+                        <p class="flex justify-between"><b>Bastón:</b> <span>1d6-1 Cont.</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: GRIMORIO DETALLADO (MÁS GRANDE Y LEGIBLE) -->
+    <div class="page">
+        <h2 class="text-4xl font-bold mb-8 border-b-4 border-red-800 pb-2">Grimorio de Shiroe</h2>
+        
+        <div class="space-y-8">
+            <!-- NIVEL 1 -->
+            <div class="box-section">
+                <h3 class="bg-stone-800 text-white px-4 py-2 text-sm font-bold uppercase mb-4 rounded">Nivel 1 (4 Ranuras)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-[14px]">
+                    <div class="border-l-4 border-stone-200 pl-4">
+                        <p class="font-bold text-lg">Armadura de Mago <span class="spell-tag">8h / Self</span></p>
+                        <p class="text-stone-600">Tu defensa pasa a ser 13 + Des (Total: 14). Dura todo el día sin concentración.</p>
+                    </div>
+                    <div class="border-l-4 border-stone-200 pl-4">
+                        <p class="font-bold text-lg">Escudo <span class="spell-tag">Reac. / Self</span></p>
+                        <p class="text-stone-600">+5 a tu CA de forma inmediata cuando te van a golpear. Inmune a Proyectil Mágico.</p>
+                    </div>
+                    <div class="border-l-4 border-stone-200 pl-4">
+                        <p class="font-bold text-lg">Grasa <span class="spell-tag">1 min / 60ft</span></p>
+                        <p class="text-stone-600">Suelo de 10ft es terreno difícil. Si fallan Salv. Destreza, caen al suelo.</p>
+                    </div>
+                    <div class="border-l-4 border-stone-200 pl-4">
+                        <p class="font-bold text-lg">Niebla <span class="spell-tag conc">Conc. / 120ft</span></p>
+                        <p class="text-stone-600">Crea una esfera de 20ft de radio. El área está totalmente oscurecida.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEL 2 -->
+            <div class="box-section">
+                <h3 class="bg-blue-900 text-white px-4 py-2 text-sm font-bold uppercase mb-4 rounded">Nivel 2 (3 Ranuras)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-[14px]">
+                    <div class="border-l-4 border-blue-200 pl-4">
+                        <p class="font-bold text-lg text-blue-900">Telaraña <span class="spell-tag conc">Conc. / 60ft</span></p>
+                        <p class="text-stone-600">Llena área de 20ft de telaraña. Si fallan Salv. Des, quedan <b>Apresados</b>.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-200 pl-4">
+                        <p class="font-bold text-lg text-blue-900">Retener Persona <span class="spell-tag conc">Conc. / 60ft</span></p>
+                        <p class="text-stone-600">Paraliza a un humanoide. Ventaja en ataques y críticos automáticos a 5ft.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-200 pl-4">
+                        <p class="font-bold text-lg text-blue-900">Imagen Espejo <span class="spell-tag">1 min / Self</span></p>
+                        <p class="text-stone-600">Crea 3 copias. Los ataques enemigos pueden impactar a las copias en vez de a ti.</p>
+                    </div>
+                    <div class="border-l-4 border-blue-200 pl-4">
+                        <p class="font-bold text-lg text-blue-900">Paso Brumoso <span class="spell-tag">Bono / 30ft</span></p>
+                        <p class="text-stone-600">Te teletransportas a un lugar que veas. Ideal para reposicionarte rápido.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- NIVEL 3 -->
+            <div class="box-section">
+                <h3 class="bg-red-900 text-white px-4 py-2 text-sm font-bold uppercase mb-4 rounded">Nivel 3 (2 Ranuras)</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-[14px]">
+                    <div class="border-l-4 border-red-200 pl-4">
+                        <p class="font-bold text-lg text-red-900">Prisa (Haste) <span class="spell-tag conc">Conc. / 30ft</span></p>
+                        <p class="text-stone-600">Aliado gana +2 CA, ventaja en Destreza, doble velocidad y 1 acción extra por turno.</p>
+                    </div>
+                    <div class="border-l-4 border-red-200 pl-4">
+                        <p class="font-bold text-lg text-red-900">Contrahechizo <span class="spell-tag">Reac. / 60ft</span></p>
+                        <p class="text-stone-600">Interrumpe un hechizo enemigo mientras se lanza. Nivel 3 o menos falla automático.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: BIOGRAFÍA Y ASPECTO -->
+    <div class="page">
+        <h2 class="text-4xl font-bold mb-8 border-b-4 border-black pb-2">Rasgos y Aspecto</h2>
+        
+        <div class="grid grid-cols-12 gap-10">
+            <!-- COLUMNA IMAGEN GRANDE -->
+            <div class="col-span-6">
+                <div class="image-placeholder h-[700px] border-4 border-double border-black rounded-2xl relative shadow-xl overflow-hidden">
+                    <!-- Imagen de cuerpo completo del personaje -->
+                    <!-- Copia el archivo de imagen en la misma carpeta que este HTML y nómbralo "Shiroe_full.png" -->
+                    <img src="Shiroe_full.png" alt="Shiroe cuerpo completo" class="object-cover w-full h-full" />
+                </div>
+            </div>
+
+            <!-- COLUMNA DATOS -->
+            <div class="col-span-6 space-y-6">
+                <div class="box-section bg-stone-50">
+                    <h3 class="font-bold border-b mb-3 uppercase text-red-900">Historia</h3>
+                    <p class="text-sm leading-relaxed italic">
+                        Conocido como el "Villano con Gafas", Shiroe utiliza su magia no para destruir, sino para controlar el destino del campo de batalla. Su capacidad analítica le permite ver hilos de posibilidad que otros ignoran.
+                    </p>
+                </div>
+
+                <div class="box-section">
+                    <h3 class="font-bold border-b mb-3 uppercase">Poderes de Adivino</h3>
+                    <div class="space-y-4 text-sm">
+                        <p><b>👁️ Portento:</b> Tienes 2 dados d20 al día. Úsalos para reemplazar cualquier tirada de ataque, salvación o habilidad que veas.</p>
+                        <p><b>🔮 Recuperación Arcana:</b> Una vez al día tras un descanso corto, recuperas espacios de hechizo que sumen nivel 3.</p>
+                        <p><b>🍃 Linaje Feérico:</b> Ventaja vs ser hechizado. La magia no puede dormirte.</p>
+                    </div>
+                </div>
+
+                <div class="box-section bg-stone-900 text-white">
+                    <h3 class="font-bold border-b border-stone-700 mb-3 uppercase">Personalidad</h3>
+                    <ul class="text-[13px] space-y-2 list-disc ml-4">
+                        <li>Tengo un plan B para cada fracaso.</li>
+                        <li>El conocimiento debe ser compartido, pero el poder debe ser controlado.</li>
+                        <li>Mis gafas son mi herramienta de enfoque; nunca las pierdo.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
